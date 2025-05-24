@@ -21,25 +21,26 @@
         <section class="mb-4">
             <h2>Resumen del Videojuego</h2>
             <p>
-                "Arkanoid Revolution" es un videojuego arcade que retoma la esencia del clásico Arkanoid, mejorándola
-                con una experiencia gráfica moderna, niveles con mayor dinamismo, mecánicas variadas y una curva de
-                dificultad progresiva. El jugador asume el control de una plataforma ubicada en la parte inferior de la
-                pantalla, cuya misión es evitar que una pelota caiga, devolviéndola con precisión para destruir una
-                serie de bloques que se ubican en la parte superior.
+                "Arkanoid Revolution" es un videojuego arcade completamente desarrollado que reinventa la experiencia
+                del clásico Arkanoid, integrando gráficos modernos, jugabilidad optimizada y mecánicas complejas. El
+                jugador controla una plataforma ubicada en la parte inferior de la pantalla y tiene como misión evitar
+                que una esfera caiga, devolviéndola con precisión para destruir bloques fijos y móviles, algunos con
+                comportamientos especiales como regeneración, movimiento lateral o cambios de estado.
             </p>
             <p>
-                A medida que avanza, el jugador desbloqueará bonificaciones (como multiplicadores, rayos láser, pelotas
-                múltiples, entre otros) y se enfrentará a nuevos retos como bloques móviles, enemigos que interfieren el
-                rebote, y niveles con gravedades modificadas.
+                El juego, implementado en Unity, está disponible para dispositivos Android e iOS, incluye
+                múltiples modos de juego como
+                Clásico, Contrarreloj e Infinito. Cada nivel incorpora desafíos únicos: bloques móviles, físicas con
+                gravedad variable, enemigos que interfieren con el rebote, y obstáculos que requieren estrategias
+                distintas. El sistema recompensa al jugador con bonificaciones como pelotas múltiples, rayos láser,
+                escudos, velocidad reducida y duplicadores de puntaje.
             </p>
             <p>
-                El juego se divide en distintos niveles con objetivos y condiciones específicas: desde eliminar todos
-                los bloques en un tiempo límite, hasta proteger ciertas estructuras o alcanzar una puntuación mínima
-                para avanzar. La interfaz es minimalista y amigable, y el sistema de retroalimentación (sonido,
-                vibración, animaciones) está diseñado para mantener al jugador inmerso. Con soporte para dispositivos
-                táctiles y de escritorio, "Arkanoid Revolution" busca ser un título accesible para todo tipo de jugador,
-                promoviendo la rejugabilidad mediante tablas de puntajes, logros desbloqueables y contenido oculto que
-                se desbloquea con el progreso.
+                El diseño de "Arkanoid Revolution" ofrece una interfaz minimalista adaptada exclusivamente a pantallas
+                táctiles. Se han implementado retroalimentaciones auditiva, visual y respuesta táctil, junto con un
+                sistema de logros, desbloqueo de contenido oculto y un sistema de puntuación que incentiva la mejora
+                constante del jugador. Todo esto contribuye a una experiencia inmersiva, exigente y altamente rejugable.
+
             </p>
         </section>
         <section class="mb-4">
@@ -81,39 +82,58 @@
 
             <h3>1.1. Propósito</h3>
             <p>
-                El presente documento tiene como propósito especificar de manera detallada los requerimientos
-                funcionales y no funcionales del videojuego "Arkanoid Revolution", bajo el estándar IEEE 830. Está
-                dirigido a desarrolladores, testers, diseñadores y otros interesados en el proceso de desarrollo del
-                software.
+                Este documento tiene como objetivo describir detalladamente los requerimientos funcionales y no
+                funcionales del videojuego ya implementado y en funcionamiento “Arkanoid Revolution”, siguiendo la norma
+                IEEE 830. Está dirigido a profesionales involucrados en el mantenimiento, escalabilidad y mejora
+                continua del sistema, así como a desarrolladores interesados en futuras extensiones del producto.
             </p>
 
             <h3>1.2. Ámbito del Sistema</h3>
             <p>
-                El sistema a desarrollar es un videojuego arcade tipo Arkanoid para navegadores y dispositivos móviles.
-                El juego permitirá al jugador interactuar mediante teclado o pantalla táctil, rebotar la pelota,
-                destruir bloques, obtener mejoras, superar niveles y registrar puntajes. No incluirá opciones
-                multijugador ni integración en la nube en esta versión.
+                El sistema consiste en un videojuego arcade completo que se ejecuta tanto en dispositivos Android como
+                iOS. El usuario controla una plataforma móvil para mantener en juego una esfera, destruir
+                bloques, obtener potenciadores, desbloquear logros y avanzar a través de múltiples niveles. Se ha
+                priorizado la experiencia offline, por lo que no depende de conexión constante ni de funcionalidades
+                multijugador en esta versión estable.
             </p>
 
             <h3>1.3. Definiciones, Acrónimos y Abreviaturas</h3>
             <ul>
-                <li><strong>UI:</strong> Interfaz de Usuario</li>
-                <li><strong>FPS:</strong> Frames por Segundo</li>
-                <li><strong>HTML5:</strong> Lenguaje de marcado usado para crear la estructura del juego</li>
-                <li><strong>API:</strong> Interfaz de Programación de Aplicaciones</li>
-                <li><strong>UX:</strong> Experiencia del Usuario</li>
+                <li><strong>UI (User Interface / Interfaz de Usuario): </strong> Todo lo visual con lo que el jugador
+                    interactúa (botones, menús, pantallas).</li>
+                <li><strong>UX (User Experience / Experiencia del Usuario): </strong> Cómo se siente jugar el juego: si
+                    es cómodo, fluido y entendible.</li>
+                <li><strong>FPS (Frames Per Second / Cuadros por segundo): </strong> Cuántas imágenes por segundo se
+                    muestran; afecta la fluidez visual.</li>
+                <li><strong>HUD (Head-Up Display): </strong> Información sobre el juego mostrada en pantalla sin
+                    interrumpir la acción (ej: puntaje, vidas, nivel actual).</li>
+                <li><strong>API (Application Programming Interface): </strong>Conjunto de funciones que permiten al
+                    juego comunicarse con otras partes del sistema (como sonidos o sensores).</li>
+
+
             </ul>
 
             <h3>1.4. Referencias</h3>
             <ul>
-                <li>IEEE Std 830-1998</li>
-                <li>Documentación de Phaser.js (motor de juegos)</li>
+                <li><strong>IEEE Std 830-1998: </strong>Norma internacional que establece cómo documentar correctamente
+                    los requerimientos de un software.</li>
+                <li><strong>Documentación oficial del motor Unity: </strong>Manual oficial de la herramienta usada para
+                    desarrollar el juego; contiene instrucciones sobre físicas, animaciones, interfaz, rendimiento, etc.
+                </li>
+                <li><strong>Guías HIG (Apple) y Material Design (Android): </strong>Normas visuales y de usabilidad
+                    recomendadas por cada sistema operativo para asegurar una experiencia consistente en móviles.</li>
+                <li><strong>Manual técnico del proyecto “Arkanoid Revolution”: </strong>Documento interno del equipo
+                    donde se detalla la estructura del código, configuración del juego, decisiones de diseño y
+                    dependencias utilizadas.</li>
             </ul>
 
             <h3>1.5. Visión General del Documento</h3>
             <p>
-                Este documento sigue la estructura del estándar IEEE 830 y se divide en tres partes: descripción general
-                del sistema, requerimientos específicos (funcionales y no funcionales).
+                Este documento está estructurado para reflejar claramente el producto ya desarrollado. La sección 2
+                presenta una visión general del sistema, sus usuarios y entorno. La sección 3 detalla los requerimientos
+                implementados, funcionales y no funcionales, junto a restricciones de diseño y rendimiento. Finalmente,
+                la sección 4 recoge reflexiones sobre el proceso de ingeniería y documentación del sistema, resaltando
+                la utilidad del enfoque estructurado que propone el estándar IEEE 830.
             </p>
         </section>
         <section class="mb-4">
@@ -121,11 +141,12 @@
 
             <h3>2.1. Perspectiva del Producto</h3>
             <p>
-                El producto es independiente y autónomo, instalable como aplicación móvil. No requiere conexión
-                permanente a internet. Su arquitectura está basada en MVC, y se ejecuta sobre el sistema operativo
-                Android/iOS.
-                <br>Ejemplo: un usuario descarga Arkanoid en su celular, lo ejecuta, elige un nivel inicial y comienza a
-                jugar sin requerir cuenta o conexión.
+                El producto es una aplicación móvil completamente funcional para Android e iOS. No requiere conexión
+                permanente a internet, ya que todo el contenido está disponible localmente. Su arquitectura sigue el
+                patrón Modelo-Vista-Controlador (MVC), facilitando el mantenimiento y escalabilidad.
+                <br>
+                Ejemplo: un usuario descarga Arkanoid Revolution desde la tienda, lo abre sin registrarse, selecciona un
+                modo de juego y comienza a jugar sin necesidad de conexión a internet.</br>
 
             </p>
 
@@ -136,43 +157,44 @@
                 <li>Detectar colisiones entre la pelota y los bloques</li>
                 <li>Romper bloques y actualizar el puntaje</li>
                 <li>Aumentar dificultad con cada nivel (más bloques, velocidad de pelota)</li>
+                <li>Aumentar la dificultad de manera progresiva (bloques más rápidos, enemigos móviles, gravedad
+                    variable).
+                <li>Obtener bonificaciones como rayos láser, esferas múltiples, escudos o ralentización del tiempo.</li>
             </ul>
 
             <h3>2.3. Características de los Usuarios</h3>
-            <p>
-                El juego está dirigido a:
-                <br>
-                ● Niños y jóvenes mayores de 10 años
-                <br>
-                ● Usuarios casuales de juegos móviles
-                <br>
-                ● Personas sin necesidad de experiencia previa en videojuegos
-            </p>
+            El juego está dirigido a:
+            <ul>
+                <li>Niños y jóvenes mayores de 10 años que buscan desafíos arcade. </li>
+                <li>Usuarios casuales de juegos móviles.</li>
+                <li>Personas sin experiencia previa en videojuegos, gracias a su tutorial inicial interactivo.</li>
+                <li>Jugadores que disfrutan de sistemas de superación personal y desbloqueo progresivo.</li>
+            </ul>
 
             <h3>2.4. Restricciones</h3>
             <ul>
                 <li>Debe funcionar correctamente en Android 10+ y iOS 14+.</li>
                 <li>Resolución mínima: 720x1280 px.</li>
                 <li>Lenguaje: Kotlin para Android, Swift para iOS.</li>
-                <li>No debe consumir más de 150MB de almacenamiento.</li>
-                <li>No debe superar el uso de 20% de CPU en ejecución continua.</li>
+                <li>Tamaño de instalación inferior a 150MB.</li>
+                <li>Uso de CPU optimizado para no superar el 20% durante sesiones normales.</li>
             </ul>
 
             <h3>2.5. Suposiciones y Dependencias</h3>
             <ul>
-                <li>Se asume que el dispositivo tiene pantalla táctil</li>
-                <li>asume que hay parlantes integrados.</li>
-                <li>Se usará Unity como motor de desarrollo.</li>
-                <li>El diseño será compatible con el modo claro y oscuro.</li>
+                <li>Se asume que el dispositivo posee pantalla táctil y parlantes.</li>
+                <li>Unity fue utilizado como motor gráfico y de física del juego.</li>
+                <li>La interfaz se adapta tanto al modo claro como oscuro del sistema.</li>
+                <li>No se requiere conexión a internet durante el uso.</li>
             </ul>
 
 
             <h3>2.6. Requisitos Futuros</h3>
             <ul>
-                <li>Agregar modos de juego: contrarreloj, infinito</li>
+                <li>Agregar modos de juego adicionales (Supervivencia, Desafío diario).</li>
                 <li>Sistema de logros y recompensas diarias</li>
-                <li>Ranking local y global</li>
-                <li>Personalización de interfaz y skins desbloqueables</li>
+                <li>Editor de niveles para crear y compartir desafíos personalizados.</li>
+                <li>Nuevas skins y temas visuales desbloqueables según logros.</li>
             </ul>
 
 
@@ -180,81 +202,85 @@
                 <h2 id="requisitos-especificos">3. Requisitos Específicos</h2>
                 <h3>3.1. Interfaces Externas</h3>
                 <ul>
-                    <li><strong>Interfaz de Usuario:</strong> Pantallas adaptativas para móvil y escritorio, botones
-                        táctiles,
-                        control por teclado.</li>
-                    <li><strong>Interfaz de Hardware:</strong> Sensor táctil, CPU, memoria RAM mínima de 2GB.</li>
-                    <li><strong>Interfaz de Software:</strong> Dependencia de motor Unity, integración con sistema
-                        operativo
-                        Android/iOS.</li>
-                    <li><strong>Interfaz de Comunicación:</strong> (opcional en futuras versiones) sincronización de
-                        logros
-                        mediante red.</li>
+                    <li><strong>Interfaz de Usuario:</strong> Pantallas adaptadas a móviles, botones táctiles grandes,
+                        íconos intuitivos.</li>
+                    <li><strong>Interfaz de Hardware:</strong> Sensor táctil, acelerómetro, mínimo 2GB de RAM.</li>
+                    <li><strong>Interfaz de Software:</strong> Dependencia del motor Unity y sistema operativo móvil.
+                    </li>
+                    <li><strong>Interfaz de Comunicación:</strong> No se utiliza en la versión actual; futuras versiones
+                        podrían sincronizar logros en la nube.</li>
                 </ul>
 
                 <h3>3.2. Funciones</h3>
                 <ul>
-                    <li>El usuario podrá iniciar una partida desde el menú principal.</li>
-                    <li>El sistema detectará colisiones entre la pelota y los bloques, generando destrucción y sumando
-                        puntaje.
+                    <li>El usuario puede iniciar partidas sin necesidad de iniciar sesión.</li>
+                    <li>Las colisiones generan efectos visuales y de sonido.</li>
+                    <li>Algunos bloques necesitan varios golpes para romperse o, al hacerlo, también destruyen los
+                        bloques cercanos.
                     </li>
-                    <li>Se generarán bonificaciones aleatorias al destruir ciertos bloques.</li>
-                    <li>Al terminar un nivel, se mostrará una pantalla con resultados y opción de avanzar.</li>
-                    <li>El juego llevará un registro local de puntuaciones máximas por usuario.</li>
+                    <li>Al completar un nivel, se muestra un resumen con puntaje, tiempo y rendimiento.</li>
+                    <li>El progreso y estadísticas del usuario se guardan en el dispositivo.</li>
                 </ul>
 
                 <h3>3.3. Requisitos de Rendimiento</h3>
                 <ul>
                     <li>El juego debe mantener al menos 30 FPS en dispositivos Android 10+ e iOS 14+.</li>
-                    <li>Tiempo de carga máximo: 3 segundos para la pantalla inicial.</li>
-                    <li>Latencia de respuesta al toque o tecla: menor a 100 ms.</li>
+                    <li>Tiempo de carga inicial máximo: 3 segundos.</li>
+                    <li>Latencia de respuesta al toque: menor a 100 ms.</li>
+                    <li>Transiciones suaves entre pantallas y niveles, sin bloqueos. </li>
                 </ul>
 
                 <h3>3.4. Restricciones de Diseño</h3>
                 <ul>
-                    <li>Debe respetarse el diseño minimalista propuesto (no recargar la pantalla con elementos).</li>
-                    <li>Las interfaces deben funcionar en orientación vertical.</li>
-                    <li>No se permitirán compras dentro de la app (versión inicial).</li>
+                    <li>Diseño minimalista con prioridad en la claridad visual.</li>
+                    <li>El juego funciona solo en orientación vertical.</li>
+                    <li>No hay compras dentro de la app en esta versión (modelo gratuito completo).</li>
                 </ul>
 
                 <h3>3.5. Atributos del Sistema</h3>
                 <ul>
-                    <li><strong>Fiabilidad:</strong> El sistema debe manejar excepciones sin cerrar inesperadamente.
+                    <li><strong>Fiabilidad:</strong> Manejo de errores y cierres controlados sin pérdida de datos.
                     </li>
-                    <li><strong>Disponibilidad:</strong> La app debe estar disponible para descarga el 95% del tiempo en
-                        las
-                        tiendas.</li>
-                    <li><strong>Seguridad:</strong> El acceso a configuraciones y datos debe ser local, sin transmitir
-                        información externa.</li>
-                    <li><strong>Mantenibilidad:</strong> El código debe estar modularizado para facilitar futuras
-                        actualizaciones.</li>
-                    <li><strong>Portabilidad:</strong> Debe compilarse fácilmente para Android e iOS desde Unity.</li>
+                    <li><strong>Disponibilidad:</strong> Publicado en tiendas oficiales con tasa de disponibilidad mayor
+                        al 95%.</li>
+                    <li><strong>Seguridad:</strong> El almacenamiento local de datos evita filtraciones externas.</li>
+                    <li><strong>Mantenibilidad:</strong> El código del juego está organizado por partes para que sea
+                        fácil de actualizar, y se lleva un control de los cambios en un repositorio.</li>
+                    <li><strong>Portabilidad:</strong> Compilación adaptada para Android e iOS desde el mismo proyecto
+                        Unity.</li>
                 </ul>
 
                 <h3>3.6. Otros Requisitos</h3>
                 <ul>
-                    <li>El juego debe incluir un sistema de retroalimentación auditiva (efectos de sonido).</li>
-                    <li>Se debe incluir un tutorial básico en la primera partida del usuario.</li>
+                    <li>Efectos de sonido personalizables y control de volumen interno.</li>
+                    <li>Tutorial introductorio automático en la primera ejecución.</li>
                     <li>El juego debe guardar automáticamente el avance del jugador.</li>
-                    <li>Incluir una opción para restablecer todos los datos del juego.</li>
+                    <li>Sistema para restablecer progreso y configuraciones desde el menú.</li>
+                    <li>Opciones de accesibilidad para contraste y tamaño de texto.</li>
                 </ul>
             </section>
             <section class="mb-4">
                 <h2>Conclusiones y reflexiones del proceso</h2>
-                <p>Durante el desarrollo de este documento, se comprendió la relevancia de levantar requisitos de forma
-                    estructurada, especialmente en un proyecto aparentemente
-                    simple como un videojuego arcade. El aplicar la norma IEEE 830 permitió ver cómo una correcta
-                    especificación no solo aclara el alcance, sino que también facilita la planificación
-                    y reduce errores durante el desarrollo.
-                    Se identificaron tanto los aspectos funcionales del juego (como las mecánicas y niveles) como los no
-                    funcionales (rendimiento, compatibilidad, usabilidad).
-                    Cada sección fue redactada siguiendo principios de claridad, completitud y verificabilidad. Este
-                    ejercicio también resaltó el valor de considerar al usuario final desde las etapas
-                    iniciales y cómo pequeños detalles —como el HUD, la respuesta táctil o los efectos sonoros— pueden
-                    impactar fuertemente la experiencia de juego.
-                    En conclusión, la ingeniería de requisitos no solo es aplicable a grandes sistemas corporativos,
-                    sino que es fundamental en cualquier producto de software que aspire a ser funcional,
-                    mantenible y agradable para el usuario final.
+                <p>Durante la elaboración de este documento, se reafirmó la importancia de levantar requisitos de forma
+                    ordenada y detallada, incluso en proyectos que a primera vista pueden parecer simples, como un
+                    videojuego arcade. Documentar “Arkanoid Revolution” bajo el estándar IEEE 830 permitió estructurar
+                    cada aspecto del juego de manera clara, desde su funcionamiento general hasta los requisitos
+                    técnicos más específicos.
+                </p>
+                <p>
+
+                    Gracias a este enfoque, fue posible describir un producto que ya se encuentra completamente
+                    desarrollado, funcional y disponible para plataformas móviles, con mecánicas variadas, niveles
+                    progresivos, modos de juego distintos y una experiencia visual y táctil cuidadosamente diseñada.
+                    Cada sección del documento mantiene coherencia con el estado real del proyecto, destacando tanto las
+                    características técnicas como la perspectiva del jugador final.</p>
+
+                <p>
+                    Además, este ejercicio permitió reflexionar sobre cómo elementos como la jugabilidad, la
+                    accesibilidad, la respuesta táctil o la organización del código influyen directamente en la calidad
+                    del software. Concluir este proceso demuestra que la ingeniería de requisitos no es exclusiva de
+                    proyectos empresariales complejos, sino una herramienta clave para desarrollar productos completos,
+                    eficientes y centrados en el usuario.
                 </p>
             </section>
     </main>

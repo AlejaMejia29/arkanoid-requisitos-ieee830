@@ -48,10 +48,9 @@ Este repositorio contiene el levantamiento de requerimientos funcionales y no fu
 
 ## 🧑‍💻 Autor
 
-**Joan Sebastián Sosa Bedoya**  
+**Alejandra Mejia Patiño**  
 Estudiante de Ingeniería de Software  
-Universidad [Nombre de la universidad]
-
+Universidad EAM
 ---
 
 ## 📆 Entrega
